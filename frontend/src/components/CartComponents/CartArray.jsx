@@ -1,0 +1,3 @@
+const CartArray = [];
+
+export { CartArray };
