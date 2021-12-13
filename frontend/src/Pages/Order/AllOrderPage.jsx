@@ -106,7 +106,7 @@ export const AllOrderPage = (props) => {
                                 <TableCell>{res.price}</TableCell>
                                 <TableCell>{res.size}</TableCell>
                                 <TableCell>{res.discount}</TableCell>
-                                <TableCell>{res.discountedPrice}</TableCell>
+                                <TableCell>{res.discountedPrice.toFixed(2)}</TableCell>
                                 <TableCell>{res.date}</TableCell>
                                 <TableCell>
                                   <img

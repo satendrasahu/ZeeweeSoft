@@ -147,7 +147,7 @@ export const Product = (props) => {
                         <TableCell>{data.price}</TableCell>
                         <TableCell>{data.size}</TableCell>
                         <TableCell>{data.discount}</TableCell>
-                        <TableCell>{data.discountedPrice}</TableCell>
+                        <TableCell>{data.discountedPrice.toFixed(2)}</TableCell>
                         <TableCell>{data.category}</TableCell>
                         <TableCell>
                           <img

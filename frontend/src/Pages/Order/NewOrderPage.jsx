@@ -122,7 +122,7 @@ export const NewOrderPage = (props) => {
                                 <TableCell>{res.price}</TableCell>
                                 <TableCell>{res.size}</TableCell>
                                 <TableCell>{res.discount}</TableCell>
-                                <TableCell>{res.discountedPrice}</TableCell>
+                                <TableCell>{res.discountedPrice.toFixed(2)}</TableCell>
                                 <TableCell>{res.date}</TableCell>
                                 <TableCell>
                                   <img
@@ -133,7 +133,7 @@ export const NewOrderPage = (props) => {
                                 </TableCell>
                                 <TableCell>
                                 <Button size="small" variant="contained">
-                                  {res.total}
+                                  {res.total.toFixed(2)}
                                 </Button>
                               </TableCell>
                               </TableRow>

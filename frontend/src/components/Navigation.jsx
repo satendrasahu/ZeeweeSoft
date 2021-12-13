@@ -351,6 +351,7 @@ const MiniDrawer = (props) => {
                 }}
                 inputProps={{ "aria-label": "search" }}
                 onChange={(e) => {
+                  history.push("/")
                   dispatch(SearchProduct(e.target.value));
                 }}
               />
@@ -359,6 +360,7 @@ const MiniDrawer = (props) => {
               color="primary"
               variant="contained"
               onClick={() => {
+                history.push("/")
                 dispatch(ShowCategory(true));
               }}
             >

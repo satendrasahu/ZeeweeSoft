@@ -26,7 +26,9 @@ const Login = async(req, res) => {
                 token: generateToken(user._id),
             })
         } else {
-            res.status(401)
+            res.status(401).send({
+                Unsuccess: 'Invalid email or password'
+            })
             console.log('Invalid email or password')
         }
     }
