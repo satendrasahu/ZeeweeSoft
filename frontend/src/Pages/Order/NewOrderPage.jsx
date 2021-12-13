@@ -82,6 +82,7 @@ export const NewOrderPage = (props) => {
       if (result) {
         console.log(" New Order List", result.data.data);
         await setOrderData(result.data.data);
+        setList(result.data.data)
       }
     } catch (err) {}
   }, []);

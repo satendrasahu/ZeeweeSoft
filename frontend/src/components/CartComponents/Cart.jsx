@@ -17,7 +17,7 @@ import axios from "axios";
 import { decNumber, incNumber } from "../../actions/index";
 import { notify } from "../Product";
 import { useHistory } from "react-router-dom";
-import { getId } from "../../Pages/Auth/hepler";
+import { getId, isUserLoggedIn } from "../../Pages/Auth/hepler";
 
 const deleteProduct = (_id) => {
   swal({
@@ -48,6 +48,7 @@ export const Cart = () => {
   // const myState1 = useSelector((state1) => state1.changeTheProductName);
   // alert(myState1)
  
+  const isLoggedIN =isUserLoggedIn()
   const history = useHistory()
   let itemsArr =[]
   const StyledTableCell = withStyles((theme) => ({
@@ -128,6 +129,7 @@ export const Cart = () => {
   const dispatch = useDispatch();
 
   const placeOrder = async(items,userId)=>{
+    if(isLoggedIN){
     try{
       const data = fetch('api/order/order',{
         method : "POST",
@@ -143,6 +145,10 @@ export const Cart = () => {
     catch(err){
 
     }
+  }
+  else{
+    history.push("/login")
+  }
   }
   return (
     <>
@@ -277,6 +283,7 @@ export const Cart = () => {
                         }
                     )
                     })
+
                     placeOrder( itemsArr,userId)
                     }}>
                       Place Order
